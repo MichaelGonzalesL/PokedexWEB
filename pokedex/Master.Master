@@ -33,7 +33,22 @@
                         </li>
                     </ul>
                 </div>
-                
+                <%--Prueba de login--%>
+
+                <div>
+                    <%if (!negocio.Seguridad.sesionActiva(Session["trainee"]))
+                        {%>
+                    <a class="btn btn-primary" href="Login.aspx">LOGIN</a>
+                    <a class="btn btn-success" href="Registro.aspx">REGISTRARSE</a>
+                    <%}
+                      else{ %>
+                    <asp:Button Text="Salir" ID="btnSalir" CssClass="btn btn-outline-primary me-2" runat="server" OnClick="btnSalir_Click"/>
+                    <asp:Label ID="lblUser" runat="server" />
+                    <%} %>
+                    <asp:Image  ID="imgAvatar" style="height:40px;width:40px;border-radius:50%;"
+                        runat="server" />
+                </div>
+
             </div>
         </nav>
         <div class="container">
